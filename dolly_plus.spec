@@ -1,6 +1,6 @@
 %define name dolly_plus
 %define version 0.93
-%define release %mkrel 4
+%define release %mkrel 6
 
 Summary: Clone the installation of one machine to many other machines
 Name: %{name}
