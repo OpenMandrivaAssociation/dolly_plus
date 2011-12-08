@@ -46,9 +46,9 @@ pretty robust in the case of a client machine trouble.
 rm -rf $RPM_BUILD_ROOT
 mkdir -p %{buildroot}/%{_bindir}
 mkdir -p %{buildroot}/%{_sysconfdir}
-install -m755 $RPM_BUILD_DIR/%name-%version/dollyS %{buildroot}/%{_bindir}/dollyS
-install -m755 $RPM_BUILD_DIR/%name-%version/dollyC %{buildroot}/%{_bindir}/dollyC
-install -m755 $RPM_BUILD_DIR/%name-%version/dping %{buildroot}/%{_bindir}/dping
+install -m755 %{_builddir}/%name-%version/dollyS %{buildroot}/%{_bindir}/dollyS
+install -m755 %{_builddir}/%name-%version/dollyC %{buildroot}/%{_bindir}/dollyC
+install -m755 %{_builddir}/%name-%version/dping %{buildroot}/%{_bindir}/dping
 install -m 644 %{SOURCE2} %{buildroot}/%{_sysconfdir}/dolly_plus.cfg.sample
 
 %clean
