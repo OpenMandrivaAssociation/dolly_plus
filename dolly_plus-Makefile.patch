@@ -1,0 +1,28 @@
+--- Makefile	2002-02-01 09:34:45.000000000 +0100
++++ Makefile.patched	2005-11-17 13:57:40.000000000 +0100
+@@ -8,21 +8,21 @@
+ 	touch all
+ 
+ dollyS : Server.o Config.o Net.o List.o Packet.o Buffer.o Disk.o ServThread.o StopWatch.o
+-	g++ -static -o dollyS Server.o Config.o Net.o List.o Packet.o Buffer.o Disk.o ServThread.o StopWatch.o -lpthread
++	g++ -o dollyS Server.o Config.o Net.o List.o Packet.o Buffer.o Disk.o ServThread.o StopWatch.o -lpthread
+ 
+ dollyS_dy : Server.o Config.o Net.o List.o Packet.o Buffer.o Disk.o ServThread.o StopWatch.o
+ 	g++ -o dollyS.dy Server.o Config.o Net.o List.o Packet.o Buffer.o Disk.o ServThread.o StopWatch.o -lpthread
+ 
+ dollyC : Client.o ClntThread.o Net.o Packet.o Buffer.o Disk.o StopWatch.o 
+-	g++ -static -o dollyC Client.o ClntThread.o Net.o Packet.o Buffer.o Disk.o StopWatch.o -lpthread
++	g++ -o dollyC Client.o ClntThread.o Net.o Packet.o Buffer.o Disk.o StopWatch.o -lpthread
+ 
+ dollyC_dm : Client_dummy.o ClntThread.o Net.o Packet.o Buffer.o Disk.o StopWatch.o 
+ 	sed -e's/^DataOut \*find_next_and_newnet/DataOut *find_next_and_newnet(PacketIte *ite); DataOut *NO_MEANINGNAME/' Client.cpp > temp.cpp
+-	g++ -static -o dollyC.dm temp.cpp Client_dummy.cpp ClntThread.o Net.o Packet.o Buffer.o Disk.o StopWatch.o -lpthread
++	g++ -o dollyC.dm temp.cpp Client_dummy.cpp ClntThread.o Net.o Packet.o Buffer.o Disk.o StopWatch.o -lpthread
+ 
+ 
+ dping : Ping.o Config.o Net.o Packet.o List.o Buffer.o StopWatch.o
+-	g++ -static -o dping Ping.o Config.o Net.o Packet.o List.o Buffer.o StopWatch.o -lpthread
++	g++ -o dping Ping.o Config.o Net.o Packet.o List.o Buffer.o StopWatch.o -lpthread
+ 
+ ClntThread.o : ClntThread.cpp ${HEADERS}
+ 

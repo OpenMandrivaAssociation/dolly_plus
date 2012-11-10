@@ -1,0 +1,13 @@
+--- Client.cpp	2005-11-17 14:15:01.000000000 +0100
++++ Client.cpp.patched	2005-11-17 14:12:16.000000000 +0100
+@@ -95,8 +95,8 @@
+   strncpy(serverName,hostIte->get_name(),ret);
+   serverName[ret]='\0';
+   if (!hostIte->search_flag(CALL_HOST)) {
+-    fprintf(stderr,"cannot find myhost name in RING packet"
+-	    "(Client.cpp)\n"); exit(1);  }
++    fprintf(stderr,"cannot find myhost name in RING packet, trying to continue..."
++	    "(Client.cpp)\n"); } //exit(1);  }
+   ret= hostIte->get_name_len();
+   myName = new char [ret+1];
+   strncpy(myName,hostIte->get_name(),ret);
