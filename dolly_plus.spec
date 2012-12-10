@@ -46,9 +46,9 @@ pretty robust in the case of a client machine trouble.
 rm -rf $RPM_BUILD_ROOT
 mkdir -p %{buildroot}/%{_bindir}
 mkdir -p %{buildroot}/%{_sysconfdir}
-install -m755 %{_builddir}/%name-%version/dollyS %{buildroot}/%{_bindir}/dollyS
-install -m755 %{_builddir}/%name-%version/dollyC %{buildroot}/%{_bindir}/dollyC
-install -m755 %{_builddir}/%name-%version/dping %{buildroot}/%{_bindir}/dping
+install -m755 $RPM_BUILD_DIR/%name-%version/dollyS %{buildroot}/%{_bindir}/dollyS
+install -m755 $RPM_BUILD_DIR/%name-%version/dollyC %{buildroot}/%{_bindir}/dollyC
+install -m755 $RPM_BUILD_DIR/%name-%version/dping %{buildroot}/%{_bindir}/dping
 install -m 644 %{SOURCE2} %{buildroot}/%{_sysconfdir}/dolly_plus.cfg.sample
 
 %clean
@@ -62,4 +62,35 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/dollyC
 %{_bindir}/dping
 
+
+
+
+%changelog
+* Sun Dec 05 2010 Oden Eriksson <oeriksson@mandriva.com> 0.93-7mdv2011.0
++ Revision: 610267
+- rebuild
+
+* Thu Jul 24 2008 Thierry Vignaud <tv@mandriva.org> 0.93-6mdv2009.0
++ Revision: 244452
+- rebuild
+
+* Fri Dec 21 2007 Olivier Blin <oblin@mandriva.com> 0.93-4mdv2008.1
++ Revision: 136373
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+
+* Fri Mar 02 2007 Antoine Ginies <aginies@mandriva.com> 0.93-4mdv2007.0
++ Revision: 130967
+- need to increment the release to build it on cooker
+- Import dolly_plus
+
+* Thu Apr 06 2006 Antoine Ginies <aginies@mandriva.com> 0.93-2mdk
+- add default configuration file
+- use mkrel
+
+* Thu Nov 17 2005 Antoine Ginies <aginies@mandriva.com> 0.93-1mdk
+- first mdk release
 
