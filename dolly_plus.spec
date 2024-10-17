@@ -12,7 +12,7 @@ Patch1: dolly_plus-Client.patch
 Source2: dolly_plus.cfg
 License: GPL
 Group: System/Servers
-Url: http://corvus.kek.jp/~manabe/pcf/dolly/
+Url: https://corvus.kek.jp/~manabe/pcf/dolly/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 
