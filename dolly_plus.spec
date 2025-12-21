@@ -16,6 +16,7 @@ Url: https://corvus.kek.jp/~manabe/pcf/dolly/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 
+BuildRequires:	make
 %description
 In administrating a large scale PC cluster, installation and updating both
 of kernel and utility software to whole the system are very troublesome, 
